@@ -13,12 +13,7 @@ int getDivisorCount(int num) {
         }
     }
     
-    int sum = 1;
-    if (divisorVec.size() % 2 == 0) {
-        return sum;
-    } else if (divisorVec.size() % 2 != 0) {
-        return -sum;
-    }
+    return divisorVec.size() % 2 == 0 ? 1 : -1;
 }
 
 int solution(int left, int right) {
