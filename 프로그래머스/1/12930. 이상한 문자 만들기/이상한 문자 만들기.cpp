@@ -1,6 +1,5 @@
 #include <string>
 #include <vector>
-#include <iostream>
 #include <algorithm>
 using namespace std;
 
@@ -17,6 +16,5 @@ string solution(string s) {
         }
         
     }
-    cout << endl;
     return s;
 }
