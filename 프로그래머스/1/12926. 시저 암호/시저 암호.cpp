@@ -18,7 +18,6 @@ string solution(string s, int n) {
             if (a > 90) {
                 a -= 26;
             }
-            s[i] = a;
         } 
         // 소문자
         else if (s[i] <= 122) {
@@ -26,8 +25,9 @@ string solution(string s, int n) {
             if (a > 122) {
                 a -= 26;
             }
-            s[i] = a;
         }
+        
+        s[i] = a;
     }
     
     return s;
