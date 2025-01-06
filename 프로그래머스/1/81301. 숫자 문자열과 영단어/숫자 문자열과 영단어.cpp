@@ -25,17 +25,11 @@ int solution(string s) {
     
     while (i < s.length()) {
         if (s[i] >= 97 && s[i] <= 122) {
-            if (sMap.count(s.substr(i, 3)) == 1) {
-                result += sMap[s.substr(i, 3)];
-                i += 3;
-            } 
-            else if (sMap.count(s.substr(i, 4)) == 1) {
-                result += sMap[s.substr(i, 4)];
-                i += 4;  
-            }
-            else if (sMap.count(s.substr(i, 5)) == 1) {
-                result += sMap[s.substr(i, 5)];
-                i += 5;  
+            for (int j = 3; j <= 5; j++) {
+                if (sMap.count(s.substr(i, j)) == 1) {
+                    result += sMap[s.substr(i, j)];
+                    i += j;
+                }
             }
         }
         else {
