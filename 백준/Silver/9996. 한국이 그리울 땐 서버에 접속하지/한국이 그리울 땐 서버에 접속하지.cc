@@ -1,28 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
-int a;
-int b1, c1;
-char b, c;
-string d, e, f;
+
+int a, e;
+string b, c, d, f, g;
 int main() {
 	ios::sync_with_stdio(false); cin.tie(NULL);
 	cin >> a;
-	cin >> d;
-	for (int i = 0; i < d.length(); i++) {
-		if (d[i] == '*') {
-			b = d[i - 1];
-			b1 = i - 1;
-			c = d[i + 1];
-			c1 = d.length() - (i + 1 + 1);
+	cin >> b;
+	for(int i = 0; i < b.length(); i++) {
+		if (b[i] == 42) e = i;
+	}
+	c = b.substr(0, e);
+	d = b.substr(e + 1);
+	
+	for(int i = 0; i < a; i++) {
+		cin >> f;
+		if (c.size() + d.size() > f.size()) g += "NE\n";
+		else {
+			if (f.substr(0, c.size()) == c && f.substr(f.length() - d.size()) == d) g += "DA\n";
+			else g += "NE\n";
 		}
 	}
-	for(int i = 0; i < a; i++) {
-		cin >> e;
-		if ((b1 + 1) + (c1 + 1) > e.length()) f += "NE";
-		else if(e[b1] == b && e[e.length() - c1 - 1] == c) f += "DA";
-		else f += "NE";
-		if (i < a - 1) f += "\n"; 
-	}
-	cout << f;
-	return 0;
+	cout << g;
 }
