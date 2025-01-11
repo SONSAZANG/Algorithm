@@ -2,7 +2,7 @@
 using namespace std;
 
 string s, temp;
-// A = 65, A = 97
+// A = 65, a = 97
 int main() {
 	temp = "";
 	getline(cin, s);
