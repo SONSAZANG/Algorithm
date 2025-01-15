@@ -1,16 +1,12 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <iostream>
-
 using namespace std;
 
-int zeroCnt = 0;
-int cnt = 0;
+int zeroCnt = 0, cnt = 0;
 vector<int> solution(vector<int> lottos, vector<int> win_nums) {
     vector<int> answer;
     int grade[10];
-    
     grade[6] = 1;
     grade[5] = 2;
     grade[4] = 3;
