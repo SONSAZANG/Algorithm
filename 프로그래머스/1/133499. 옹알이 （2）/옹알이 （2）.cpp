@@ -52,8 +52,6 @@ int checkWord(string str)
 vector<string> says = { "aya", "ye", "woo", "ma" };
 int solution(vector<string> babbling) {
     int answer = 0;
-    
     for (string i : babbling) answer += checkWord(i);
-    
     return answer;
 }
