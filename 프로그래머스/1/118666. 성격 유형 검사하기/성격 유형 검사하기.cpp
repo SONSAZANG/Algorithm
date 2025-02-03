@@ -1,7 +1,6 @@
 #include <string>
 #include <vector>
 #include <map>
-#include <iostream>
 using namespace std;
 
 map<char, int> rMap;
@@ -17,28 +16,15 @@ string solution(vector<string> survey, vector<int> choices) {
     rMap.insert(make_pair('A', 0));
     rMap.insert(make_pair('N', 0));
     
-    for (int i = 0; i < choices.size(); i++) 
-    {
-        string s = survey[i];
+    for (int i = 0; i < choices.size(); i++) {
         if (choices[i] == 4) continue;
-        else if (choices[i] < 4) 
-        {
-            rMap[survey[i][0]] += (4 - choices[i]);
-        }
-        else if (choices[i] > 4) 
-        {
-            rMap[survey[i][1]] += (choices[i] - 4);
-        }
+        else if (choices[i] < 4) rMap[survey[i][0]] += (4 - choices[i]);
+        else if (choices[i] > 4) rMap[survey[i][1]] += (choices[i] - 4);
     }
-    
-    if (rMap['R'] >= rMap['T']) answer += 'R';
-    else answer += 'T';
-    if (rMap['C'] >= rMap['F']) answer += 'C';
-    else answer += 'F';
-    if (rMap['J'] >= rMap['M']) answer += 'J';
-    else answer += 'M';
-    if (rMap['A'] >= rMap['N']) answer += 'A';
-    else answer += 'N';
-    
+
+    answer += rMap['R'] >= rMap['T'] ? 'R' : 'T';
+    answer += rMap['C'] >= rMap['F'] ? 'C' : 'F';
+    answer += rMap['J'] >= rMap['M'] ? 'J' : 'M';
+    answer += rMap['A'] >= rMap['N'] ? 'A' : 'N';
     return answer;
 }
