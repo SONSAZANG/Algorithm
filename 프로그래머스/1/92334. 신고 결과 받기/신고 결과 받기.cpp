@@ -1,6 +1,5 @@
 #include <string>
 #include <vector>
-#include <iostream>
 #include <map>
 #include <set>
 using namespace std;
@@ -10,12 +9,7 @@ map<string, set<string>> callCnt;
 map<string, int> answerMap;
 vector<int> solution(vector<string> id_list, vector<string> report, int k) {
     vector<int> answer;
-    
-    for (string i : id_list)
-    {
-        answerMap[i] = 0;
-    }
-    
+    for (string i : id_list) answerMap[i] = 0;
     for (string i : report) 
     {
         string a = "", b = "";
@@ -30,21 +24,8 @@ vector<int> solution(vector<string> id_list, vector<string> report, int k) {
         callCnt[a].insert(b);
         reportCnt[b].insert(a); 
     }
-    for (auto i : reportCnt) 
-    {
-        if (i.second.size() >= k) 
-        {
-            for (string j : i.second) 
-            {
-                answerMap[j]++;
-            }
-        }
-    }
-    
-    for (auto i : id_list) 
-    {
-        answer.push_back(answerMap[i]);
-    }
+    for (auto i : reportCnt) if (i.second.size() >= k) for (string j : i.second) answerMap[j]++;
+    for (auto i : id_list) answer.push_back(answerMap[i]);
     
     return answer;
 }
