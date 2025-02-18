@@ -17,7 +17,6 @@ int solution(int n, int a, int b)
         a = ceil(a / 2.0f);
         b = ceil(b / 2.0f);
         if (a == b) break;
-        if (a <= 1 && b <= 1) break;
     }
     answer = s - round;
     return answer;
