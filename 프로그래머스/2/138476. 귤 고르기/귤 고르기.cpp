@@ -12,16 +12,16 @@ int solution(int k, vector<int> tangerine) {
     }
     
     vector<pair<int, int>> v(m.begin(), m.end());
-    sort(v.begin(), v.end(), [](pair<int, int> a, pair<int, int> b) {
-		return a.second > b.second;
-		});
+    sort(v.begin(), v.end(), [](pair<int, int> a, pair<int, int> b) 
+    {
+        return a.second > b.second;
+    });
 
-    int sum = 0, index = 0;
     for (auto i : v) 
     {
-        if (k > sum) 
+        if (k > 0) 
         {
-            sum += i.second;
+            k -= i.second;
             answer++;
         }
         else break;
