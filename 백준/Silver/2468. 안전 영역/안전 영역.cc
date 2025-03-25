@@ -2,8 +2,7 @@
 using namespace std;
 
 const int max_n = 104;
-int n, minValue, maxValue, a[max_n][max_n], visited[max_n][max_n], nx, ny, ret, maxRet;
-vector<int> v;
+int n, maxValue, a[max_n][max_n], visited[max_n][max_n], nx, ny, ret, maxRet;
 int dy[4] = {-1, 0, 1, 0};
 int dx[4] = {0, 1, 0, -1};
 
@@ -35,11 +34,9 @@ int main()
 		for (int j = 0; j < n; j++)
 		{
 			cin >> a[i][j];
-			v.push_back(a[i][j]);
+			maxValue = max(maxValue, a[i][j]);
 		}
 	}
-	
-	maxValue = *max_element(v.begin(), v.end());
 	
 	for (int h = 0; h < maxValue; h++) 
 	{
